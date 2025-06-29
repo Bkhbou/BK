@@ -23,7 +23,7 @@ if menu == "🏠 Accueil":
 # --- Galerie de photos ---
 elif menu == "📸 Galerie":
     st.title("📸 Nos beaux souvenirs")
-    photos_dir = "assets/photos"
+    photos_dir = "assets"
     if not os.path.exists(photos_dir):
         st.warning("Ajoute les photos 2, 3, 4 dans le dossier `assets/photos/`")
     else:
