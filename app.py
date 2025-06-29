@@ -1,37 +1,39 @@
 import streamlit as st
 import os
 
-st.set_page_config(page_title="Pour Toi ❤️", page_icon="💖", layout="centered")
+st.set_page_config(page_title=" Khady❤️", page_icon="💖", layout="centered")
 
-# --- Barre de navigation ---
+# --- Menu latéral ---
 menu = st.sidebar.radio("Navigation", ["🏠 Accueil", "📸 Galerie", "💌 Lettre d'amour"])
 
-# --- Accueil ---
+# --- Page d'accueil ---
 if menu == "🏠 Accueil":
     st.markdown(
         """
         <div style="text-align: center;">
-            <h1 style="color: #ff4b6e;">Welcome 7ayatii 💕</h1>
+            <h1 style="color: #ff4b6e;"> 7ayatii 💕</h1>
             <p style="font-size: 20px;">Ce site a été créé juste pour toi, pour te montrer combien je t’aime. 💌</p>
-            <img src="https://i.imgur.com/Z5cU3uG.png" width="200">
         </div>
         """,
         unsafe_allow_html=True
     )
 
+    st.image("assets/1.jpg", width=300, caption="💖 Lbidaye 💖")
+
 # --- Galerie de photos ---
 elif menu == "📸 Galerie":
-    st.title("📸 Souvenir")
+    st.title("📸 Nos beaux souvenirs")
     photos_dir = "assets/photos"
     if not os.path.exists(photos_dir):
-        st.warning("Ajoute tes photos dans le dossier `assets/photos/`")
+        st.warning("Ajoute les photos 2, 3, 4 dans le dossier `assets/photos/`")
     else:
-        photos = [f for f in os.listdir(photos_dir) if f.endswith((".jpg", ".png", ".jpeg"))]
-        if not photos:
-            st.info("Aucune photo pour l’instant.")
-        else:
-            for photo in photos:
-                st.image(f"{photos_dir}/{photo}", use_column_width=True, caption="Souvenir d’amour 💞")
+        photos = ["2.jpg", "3.jpg", "4.jpg"]
+        for photo in photos:
+            path = os.path.join(photos_dir, photo)
+            if os.path.exists(path):
+                st.image(path, use_column_width=True, caption=f"Souvenir {photo.split('.')[0]} 💞")
+            else:
+                st.warning(f"{photo} est manquante dans `assets/photos/`")
 
 # --- Lettre d'amour ---
 elif menu == "💌 Lettre d'amour":
@@ -40,6 +42,7 @@ elif menu == "💌 Lettre d'amour":
     <p style='font-size:18px;'>
     Ma chérie,<br><br>
     Ce petit site est ma façon à moi de te dire combien tu es importante pour moi...<br><br>
-    (Signe ici ta vraie lettre d’amour 😍)
+    Je t’aime plus que tout 💖<br><br>
+    (Tu peux écrire ta vraie lettre ici plus tard)
     </p>
     """, unsafe_allow_html=True)
