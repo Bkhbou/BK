@@ -36,13 +36,12 @@ elif menu == "📸 Galerie":
                 st.warning(f"{photo} est manquante dans `assets/photos/`")
 
 # --- Lettre d'amour ---
-elif menu == "💌 .....":
-    st.title("💌 ")
+elif menu == "💌 T.....":
+    st.title("💌 T")
     st.markdown("""
     <p style='font-size:18px;'>
     7abibty,<br><br>
     KHadijtii hayatii shlahi nktb ga33 w9ed 3liye 4e lknt lahi ngull ...<br><br>
     Love U 7atte B3d 💖<br><br>
-    
     </p>
     """, unsafe_allow_html=True)
