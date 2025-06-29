@@ -11,7 +11,7 @@ if menu == "🏠 Accueil":
     st.markdown(
         """
         <div style="text-align: center;">
-            <h1 style="color: #ff4b6e;">Bienvenue mon amour 💕</h1>
+            <h1 style="color: #ff4b6e;">Welcome 7ayatii 💕</h1>
             <p style="font-size: 20px;">Ce site a été créé juste pour toi, pour te montrer combien je t’aime. 💌</p>
             <img src="https://i.imgur.com/Z5cU3uG.png" width="200">
         </div>
@@ -21,7 +21,7 @@ if menu == "🏠 Accueil":
 
 # --- Galerie de photos ---
 elif menu == "📸 Galerie":
-    st.title("📸 Nos beaux souvenirs")
+    st.title("📸 Souvenir")
     photos_dir = "assets/photos"
     if not os.path.exists(photos_dir):
         st.warning("Ajoute tes photos dans le dossier `assets/photos/`")
