@@ -4,7 +4,7 @@ import os
 st.set_page_config(page_title=" Khady❤️", page_icon="💖", layout="centered")
 
 # --- Menu latéral ---
-menu = st.sidebar.radio("Navigation", ["🏠 Accueil", "📸 Galerie", "💌 Lettre d'amour"])
+menu = st.sidebar.radio("Navigation", ["🏠 Accueil", "📸 Galerie", "💌 ....."])
 
 # --- Page d'accueil ---
 if menu == "🏠 Accueil":
@@ -36,8 +36,8 @@ elif menu == "📸 Galerie":
                 st.warning(f"{photo} est manquante dans `assets/photos/`")
 
 # --- Lettre d'amour ---
-elif menu == "💌 T.....":
-    st.title("💌 T")
+elif menu == "💌 .....":
+    st.title("💌 Shi ma yged yngal kun l Hayatii ane")
     st.markdown("""
     <p style='font-size:18px;'>
     7abibty,<br><br>
