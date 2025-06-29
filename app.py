@@ -3,6 +3,16 @@ import os
 
 st.set_page_config(page_title=" Khady❤️", page_icon="💖", layout="centered")
 
+
+# --- Code d'entrée sécurisé ---
+st.markdown("<h2 style='text-align: center;'>🔐 Dir Code</h2>", unsafe_allow_html=True)
+code = st.text_input("Gtlak Dir Codak :", type="password")
+
+# --- Code correct (à personnaliser) ---
+if code != "2007":
+    st.warning("🛑 4ik mahi Khady. Mreg gtlak...")
+    st.stop()
+
 # --- Menu latéral ---
 menu = st.sidebar.radio("Navigation", ["🏠 Accueil", "📸 Galerie", "💌 ....."])
 
