@@ -12,7 +12,7 @@ if menu == "🏠 Accueil":
         """
         <div style="text-align: center;">
             <h1 style="color: #ff4b6e;"> 7ayatii 💕</h1>
-            <p style="font-size: 20px;">Ce site a été créé juste pour toi, pour te montrer combien je t’aime. 💌</p>
+            <p style="font-size: 20px;">4i page mu3dle 3n sta7fii , leyle sa7feytinii nin 58ti. 💌</p>
         </div>
         """,
         unsafe_allow_html=True
@@ -31,7 +31,7 @@ elif menu == "📸 Galerie":
         for photo in photos:
             path = os.path.join(photos_dir, photo)
             if os.path.exists(path):
-                st.image(path, use_column_width=True, caption=f"Souvenir {photo.split('.')[0]} 💞")
+                st.image(path, use_column_width=True, caption=f"Khdeydy{photo.split('.')[0]} 💞")
             else:
                 st.warning(f"{photo} est manquante dans `assets/photos/`")
 
