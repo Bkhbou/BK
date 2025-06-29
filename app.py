@@ -22,7 +22,7 @@ if menu == "🏠 Accueil":
 
 # --- Galerie de photos ---
 elif menu == "📸 Galerie":
-    st.title("📸 Nos beaux souvenirs")
+    st.title("📸 souvenirs")
     photos_dir = "assets"
     if not os.path.exists(photos_dir):
         st.warning("Ajoute les photos 2, 3, 4 dans le dossier `assets/photos/`")
@@ -36,13 +36,13 @@ elif menu == "📸 Galerie":
                 st.warning(f"{photo} est manquante dans `assets/photos/`")
 
 # --- Lettre d'amour ---
-elif menu == "💌 Lettre d'amour":
-    st.title("💌 Ma lettre pour toi")
+elif menu == "💌 .....":
+    st.title("💌 ")
     st.markdown("""
     <p style='font-size:18px;'>
-    Ma chérie,<br><br>
-    Ce petit site est ma façon à moi de te dire combien tu es importante pour moi...<br><br>
-    Je t’aime plus que tout 💖<br><br>
-    (Tu peux écrire ta vraie lettre ici plus tard)
+    7abibty,<br><br>
+    KHadijtii hayatii shlahi nktb ga33 w9ed 3liye 4e lknt lahi ngull ...<br><br>
+    Love U 7atte B3d 💖<br><br>
+    
     </p>
     """, unsafe_allow_html=True)
