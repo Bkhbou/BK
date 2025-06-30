@@ -31,26 +31,25 @@ if menu == "🏠 Accueil":
     st.image("assets/1.jpg", width=300, caption="💖 Lbidaye 💖")
 
 # --- Galerie de photos ---
-import os
-import streamlit as st
 
-elif menu == "📸 Galerie":
-    st.title("📸 Souvenirs")
-    photos_dir = "assets"
-    photos = ["2.JPG", "3.jpg", "4.JPG", "5.JPG"]
+st.title("📸 Suwarne ")
 
-    if not os.path.exists(photos_dir):
-        st.warning("Le dossier `assets` est introuvable.")
+# Dossier des images
+photos_dir = "assets"
+
+# Liste des photos à afficher
+photos = ["2.JPG", "3.jpg", "4.JPG", "5.JPG"]
+
+# Affichage des chemins et existence
+st.subheader("🔍 Diagnostic des chemins :")
+for photo in photos:
+    path = os.path.join(photos_dir, photo)
+    st.write(f"Chemin : `{path}`")
+    if os.path.exists(path):
+        st.success(f"{photo} trouvé ✅")
+        st.image(path, use_column_width=True, caption=f"Khdeydy {photo.split('.')[0]} 💞")
     else:
-        # Affichage en grille : 2 colonnes
-        cols = st.columns(2)
-        for idx, photo in enumerate(photos):
-            path = os.path.join(photos_dir, photo)
-            if os.path.exists(path):
-                with cols[idx % 2]:
-                    st.image(path, use_column_width=True, caption=f"Khdeydy {photo.split('.')[0]} 💞")
-            else:
-                st.warning(f"⚠️ {photo} est manquante dans le dossier `assets`.")
+        st.error(f"{photo} introuvable ❌ dans `{photos_dir}`")
 
 # --- Lettre d'amour ---
 elif menu == "💌 .....":
