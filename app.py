@@ -44,7 +44,7 @@ elif menu == "📸 Galerie":
         for photo in photos:
             path = os.path.join(photos_dir, photo)
             if os.path.exists(path):
-                st.image(path, use_container_width=True, caption=f"Khdeydy {photo.split('.')[0]} 💞")
+                st.image(path, use_container_width=True, caption=f"Khdeydy 7abibtyy 💞")
             else:
                 st.error(f"❌ {photo} est manquante dans le dossier 'assets'")
 
