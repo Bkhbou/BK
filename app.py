@@ -34,22 +34,18 @@ if menu == "🏠 Accueil":
 
 st.title("📸 Suwarne ")
 
-# Dossier des images
 photos_dir = "assets"
-
-# Liste des photos à afficher
 photos = ["2.JPG", "3.jpg", "4.JPG", "5.JPG"]
 
-# Affichage des chemins et existence
-st.subheader("🔍 Diagnostic des chemins :")
-for photo in photos:
-    path = os.path.join(photos_dir, photo)
-    st.write(f"Chemin : `{path}`")
-    if os.path.exists(path):
-        st.success(f"{photo} trouvé ✅")
-        st.image(path, use_column_width=True, caption=f"Khdeydy {photo.split('.')[0]} 💞")
-    else:
-        st.error(f"{photo} introuvable ❌ dans `{photos_dir}`")
+if not os.path.exists(photos_dir):
+    st.warning("Le dossier 'assets' est introuvable.")
+else:
+    for photo in photos:
+        path = os.path.join(photos_dir, photo)
+        if os.path.exists(path):
+            st.image(path, use_column_width=True, caption=f"Khdeydy {photo.split('.')[0]} 💞")
+        else:
+            st.error(f"❌ {photo} est manquante dans le dossier 'assets'")
 
 # --- Lettre d'amour ---
 elif menu == "💌 .....":
