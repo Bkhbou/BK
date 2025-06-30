@@ -39,7 +39,7 @@ import os  # 👈 à ne pas oublier
 st.title("📸 Suwarne")
 
 photos_dir = "assets"
-photos = ["2.jpg", "3.jpg", "4.jpg", "5.jpg"]
+photos = ["2.JPG", "3.jpg", "4.JPG", "5.JPG"]
 
 if not os.path.exists(photos_dir):
     st.warning("Le dossier 'assets' est introuvable.")
@@ -47,7 +47,7 @@ else:
     for photo in photos:
         path = os.path.join(photos_dir, photo)
         if os.path.exists(path):
-            st.image(path, use_column_width=True, caption=f"Khdeydy {photo.split('.')[0]} 💞")
+            st.image(path, use_container_width=True, caption=f"Khdeydy {photo.split('.')[0]} 💞")
         else:
             st.error(f"❌ {photo} est manquante dans le dossier 'assets'")
 
