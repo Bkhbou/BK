@@ -35,7 +35,7 @@ elif menu == "📸 Galerie":
     st.title("📸 souvenirs")
     photos_dir = "assets"
     if not os.path.exists(photos_dir):
-        st.warning("Ajoute les photos 2, 3, 4 dans le dossier `assets/photos/`")
+        st.warning("Ajoute les photos 2, 3, 4 dans le dossier `assets`")
     else:
          photos = ["2.JPG", "3.jpg", "4.JPG","5.JPG"]
         for photo in photos:
@@ -43,7 +43,7 @@ elif menu == "📸 Galerie":
             if os.path.exists(path):
                 st.image(path, use_column_width=True, caption=f"Khdeydy{photo.split('.')[0]} 💞")
             else:
-                st.warning(f"{photo} est manquante dans `assets/photos/`")
+                st.warning(f"{photo} est manquante dans `assets`")
 
 # --- Lettre d'amour ---
 elif menu == "💌 .....":
