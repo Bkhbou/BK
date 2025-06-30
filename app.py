@@ -8,7 +8,7 @@ st.set_page_config(page_title="Khady ❤️", page_icon="💖", layout="centered
 st.markdown("<h2 style='text-align: center;'>🔐 Dir Code</h2>", unsafe_allow_html=True)
 code = st.text_input("Gtlak Dir Codak :", type="password")
 
-if code != "2007":
+if code != "02012025":
     st.warning("🛑 4ik mahi Khady. Mreg gtlak...")
     st.stop()
 
