@@ -31,20 +31,26 @@ if menu == "🏠 Accueil":
     st.image("assets/1.jpg", width=300, caption="💖 Lbidaye 💖")
 
 # --- Galerie de photos ---
+import os
+import streamlit as st
+
 elif menu == "📸 Galerie":
-    st.title("📸 souvenirs")
+    st.title("📸 Souvenirs")
     photos_dir = "assets"
-    
+    photos = ["2.JPG", "3.jpg", "4.JPG", "5.JPG"]
+
     if not os.path.exists(photos_dir):
-        st.warning("Ajoute les photos 2, 3, 4, 5 dans le dossier `assets`")
+        st.warning("Le dossier `assets` est introuvable.")
     else:
-        photos = ["2.JPG", "3.jpg", "4.JPG", "5.JPG"]
-        for photo in photos:
+        # Affichage en grille : 2 colonnes
+        cols = st.columns(2)
+        for idx, photo in enumerate(photos):
             path = os.path.join(photos_dir, photo)
             if os.path.exists(path):
-                st.image(path, use_column_width=True, caption=f"Khdeydy {photo.split('.')[0]} 💞")
+                with cols[idx % 2]:
+                    st.image(path, use_column_width=True, caption=f"Khdeydy {photo.split('.')[0]} 💞")
             else:
-                st.warning(f"{photo} est manquante dans `assets`")
+                st.warning(f"⚠️ {photo} est manquante dans le dossier `assets`.")
 
 # --- Lettre d'amour ---
 elif menu == "💌 .....":
