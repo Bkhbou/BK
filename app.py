@@ -39,7 +39,7 @@ import os  # 👈 à ne pas oublier
 st.title("📸 Suwarne")
 
 photos_dir = "assets"
-photos = ["2.JPG", "3.jpg", "4.JPG", "5.JPG"]
+photos = ["2.JPG", "3.JPG", "4.JPG", "5.JPG"]
 
 if not os.path.exists(photos_dir):
     st.warning("Le dossier 'assets' est introuvable.")
