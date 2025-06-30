@@ -37,7 +37,7 @@ elif menu == "📸 Galerie":
     if not os.path.exists(photos_dir):
         st.warning("Ajoute les photos 2, 3, 4 dans le dossier `assets/photos/`")
     else:
-        photos = ["2.JPG"]
+         photos = ["2.JPG", "3.JPG", "4.JPG"]
         for photo in photos:
             path = os.path.join(photos_dir, photo)
             if os.path.exists(path):
