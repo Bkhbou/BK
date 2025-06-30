@@ -32,7 +32,11 @@ if menu == "🏠 Accueil":
 
 # --- Galerie de photos ---
 
-st.title("📸 Suwarne ")
+
+import streamlit as st
+import os  # 👈 à ne pas oublier
+
+st.title("📸 Suwarne")
 
 photos_dir = "assets"
 photos = ["2.JPG", "3.jpg", "4.JPG", "5.JPG"]
@@ -46,6 +50,8 @@ else:
             st.image(path, use_column_width=True, caption=f"Khdeydy {photo.split('.')[0]} 💞")
         else:
             st.error(f"❌ {photo} est manquante dans le dossier 'assets'")
+
+
 
 # --- Lettre d'amour ---
 elif menu == "💌 .....":
