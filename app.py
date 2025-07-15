@@ -1,16 +1,33 @@
 import streamlit as st
 import os
 
+import streamlit as st
+
 # --- Configuration de la page ---
 st.set_page_config(page_title="Khady ❤️", page_icon="💖", layout="centered")
 
-# --- Sécurité : code d'accès ---
-st.markdown("<h2 style='text-align: center;'>🔐 Password</h2>", unsafe_allow_html=True)
-code = st.text_input("Gtlak Dir Codak :", type="password")
+# --- Mot de passe attendu ---
+MOT_DE_PASSE = "02012025"  # Remplace ce mot de passe par celui que tu veux
 
-if code != "02012025":
-    st.warning("🛑 4ik mahi Khady. Mreg gtlak...")
-    st.stop()
+# --- Sécurité : gestion de session ---
+if "authentifie" not in st.session_state:
+    st.session_state.authentifie = False
+
+# --- Affichage du champ mot de passe si non authentifié ---
+if not st.session_state.authentifie:
+    st.markdown("<h2 style='text-align: center;'>🔐 Password</h2>", unsafe_allow_html=True)
+    code = st.text_input("Gtlak Dir Codak :", type="password")
+    if code == MOT_DE_PASSE:
+        st.session_state.authentifie = True
+        st.experimental_rerun()
+    elif code != "":
+        st.error("⛔ Mreg Gtlak 4e ma y3nik")
+
+# --- Contenu après authentification ---
+if st.session_state.authentifie:
+    st.success("Welcome Hayatiii ❤️ !")
+    # 👉 Tu peux maintenant écrire ici tout le contenu de ton app sécurisé
+
 
 # --- Menu latéral ---
 menu = st.sidebar.radio("Navigation", ["🏠 Accueil", "📸 Galerie", "💌 ....."])
