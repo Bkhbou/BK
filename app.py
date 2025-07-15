@@ -29,7 +29,7 @@ if menu == "🏠 Accueil":
         unsafe_allow_html=True
     )
 
-    st.image("assets/1.jpg", width=300, caption="💖 Lbidaye 💖")
+    st.image("assets/1.jpg", width=300, caption="💖Ezyen message ga6a jani 💖")
 
 # --- Galerie de photos ---
 elif menu == "📸 Galerie":
