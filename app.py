@@ -54,7 +54,8 @@ elif menu == "💌 .....":
     st.markdown("""
     <p style='font-size:18px;'>
     7abibty,<br><br>
-    KHadijtii hayatii shlahi nktb ga33 w9ed 3liye 4e lknt lahi ngull ...<br><br>
-    Love U 7atte B3d 💖<br><br>
+    Khady hayatii tellement nb9iiik , ezyen 7ad ga6 jbart w mzlt lahi njbr , mani gayl en vm 7ad esfee mnk niye   , ma kivkk nass nb9iik   , ...<br><br>
+    Love UUUU Today , Tomorrow and Forever 💖<br><br>
+    Bechir hayateek <br><br>
     </p>
     """, unsafe_allow_html=True)
