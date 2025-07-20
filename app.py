@@ -5,13 +5,16 @@ from datetime import datetime
 # --- Configuration de la page ---
 st.set_page_config(page_title="Khady ❤️", page_icon="💖", layout="centered")
 
-# --- Mot de passe attendu ---
-MOT_DE_PASSE = "02012025"  # Mot de passe
-LAST_LOGIN_FILE = "last_login.txt"  # Fichier pour stocker la dernière connexion
+# --- Mots de passe ---
+USER_PASSWORD = "02012025"   # Mot de passe utilisateur
+ADMIN_PASSWORD = "admin2025" # Mot de passe admin pour voir la dernière connexion
+LAST_LOGIN_FILE = "last_login.txt"
 
 # --- Sécurité : gestion de session ---
 if "authentifie" not in st.session_state:
     st.session_state.authentifie = False
+if "admin" not in st.session_state:
+    st.session_state.admin = False
 
 # --- Fonction pour lire la dernière connexion ---
 def lire_derniere_connexion():
@@ -31,18 +34,25 @@ def sauvegarder_connexion():
 if not st.session_state.authentifie:
     st.markdown("<h2 style='text-align: center;'>🔐 Password</h2>", unsafe_allow_html=True)
     code = st.text_input("Gtlak Dir Codak :", type="password")
-    if code == MOT_DE_PASSE:
+    if code == USER_PASSWORD:
         st.session_state.authentifie = True
-        st.session_state.last_login = sauvegarder_connexion()
+        sauvegarder_connexion()
+        st.rerun()
+    elif code == ADMIN_PASSWORD:
+        st.session_state.authentifie = True
+        st.session_state.admin = True
         st.rerun()
     elif code != "":
         st.error("⛔ Mreg Gtlak 4e ma y3nik")
 
 # --- Contenu après authentification ---
 if st.session_state.authentifie:
-    derniere_connexion = lire_derniere_connexion()
     st.success("Welcome Hayatiii ❤️ !")
-    st.info(f"📅 Dernière connexion : {derniere_connexion}")
+
+    # --- Affichage dernière connexion uniquement pour l'admin ---
+    if st.session_state.admin:
+        derniere_connexion = lire_derniere_connexion()
+        st.warning(f"🔒 [ADMIN] Dernière connexion : {derniere_connexion}")
 
     # --- Menu latéral ---
     menu = st.sidebar.radio("Navigation", ["🏠 Accueil", "📸 Galerie", "💌 ....."])
@@ -89,4 +99,3 @@ if st.session_state.authentifie:
         Bechir hayateek <br><br>
         </p>
         """, unsafe_allow_html=True)
-
