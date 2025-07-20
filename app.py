@@ -34,7 +34,7 @@ if not st.session_state.authentifie:
     if code == MOT_DE_PASSE:
         st.session_state.authentifie = True
         st.session_state.last_login = sauvegarder_connexion()
-        st.experimental_rerun()
+        st.rerun()
     elif code != "":
         st.error("⛔ Mreg Gtlak 4e ma y3nik")
 
