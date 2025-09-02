@@ -18,7 +18,7 @@ if "admin" not in st.session_state:
 
 # --- Fonction pour lire la dernière connexion ---
 def lire_derniere_connexion():
-    if os.path.exists(LAST_LOGIN_FILE):
+    if os.path.exists(LAST_LOGIN_FILE):=bankily:"+222 31720304"
         with open(LAST_LOGIN_FILE, "r") as f:
             return f.read().strip()
     return "Aucune connexion précédente."
